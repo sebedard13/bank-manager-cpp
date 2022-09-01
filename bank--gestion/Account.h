@@ -4,10 +4,10 @@
 #include "Money.h"
 
 
-class Compte
+class Account
 {
 public:
-	Compte(const std::string& id, const int money) : id(id)
+	Account(const std::string& id, const int money) : id(id)
 	{
 		this->money.set(money);
 	}

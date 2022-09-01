@@ -1,16 +1,16 @@
 #pragma once
 #include <string>
 
-#include "GestionCompte.h"
+#include "AccountsManager.h"
 
 class Command
 {
 public:
-	virtual std::string commandeName() = 0;
+	virtual std::string commandName() = 0;
 
-	virtual void execute(GestionCompte&) = 0;
+	virtual void execute(AccountsManager&) = 0;
 
-	virtual ~Command();
+	virtual ~Command() = default;
 
 };
 

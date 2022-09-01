@@ -128,17 +128,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bank--gestion.cpp" />
-    <ClCompile Include="Command.cpp" />
-    <ClCompile Include="Compte.cpp" />
-    <ClCompile Include="CShowCompte.cpp" />
-    <ClCompile Include="GestionCompte.cpp" />
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="CShowAccount.cpp" />
+    <ClCompile Include="CListAccounts.cpp" />
+    <ClCompile Include="AccountsManager.cpp" />
     <ClCompile Include="Money.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
-    <ClInclude Include="Compte.h" />
-    <ClInclude Include="CShowCompte.h" />
-    <ClInclude Include="GestionCompte.h" />
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="CShowAccount.h" />
+    <ClInclude Include="CListAccounts.h" />
+    <ClInclude Include="AccountsManager.h" />
     <ClInclude Include="Money.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
