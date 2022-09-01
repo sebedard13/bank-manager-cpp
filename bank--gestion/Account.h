@@ -17,7 +17,7 @@ public:
 		return id;
 	}
 
-	Money getMoney() const
+	Money& getMoney()
 	{
 		return money;
 	}

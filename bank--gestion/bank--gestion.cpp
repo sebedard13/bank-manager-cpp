@@ -4,6 +4,7 @@
 
 #include "Command.h"
 #include "CListAccounts.h"
+#include "CAddAccount.h"
 #include "AccountsManager.h"
 #include "CShowAccount.h"
 
@@ -11,13 +12,14 @@ int main()
 {
 	using namespace std;
 
-	AccountsManager manager = AccountsManager();
+	AccountsManager manager {};
 	manager.loadAccounts();
 
-	auto commands = vector<unique_ptr<Command>>();
+	vector<unique_ptr<Command>> commands {};
 
 	commands.push_back(make_unique<CListAccounts>());
 	commands.push_back(make_unique<CShowAccount>());
+	commands.push_back(make_unique<CAddAccount>());
 
 	bool run = true;
 	while (run)
@@ -37,13 +39,13 @@ int main()
 		}
 		else if (value<0 || value>commands.size())
 		{
-			cout << "Not a valid command" << std::endl;
+			cout << "Not a valid command" << endl;
 		}
 		else
 		{
 			commands.at(value)->execute(manager);
 		}
-		std::cout << std::endl;
+		cout << endl;
 	}
 }
 

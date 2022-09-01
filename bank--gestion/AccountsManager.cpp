@@ -1,22 +1,36 @@
 #include "AccountsManager.h"
 
 #include <algorithm>
+#include <sstream>
+#include <iomanip>
 
 void AccountsManager::loadAccounts()
 {
 
-	Account a = Account("a", 0);
-	Account b = Account("b", 200);
-	Account c = Account("c", 35200);
+	Account& a { createNewCompte()};
+	Account& b { createNewCompte()};
+	Account& c { createNewCompte()};
 
-	comptes.emplace(a.getId(), a);
-	comptes.emplace(b.getId(), b);
-	comptes.emplace(c.getId(), c);
+	a.getMoney().set(2);
+		b.getMoney().set(200);
+		c.getMoney().set(10);
 }
 
-Account AccountsManager::createNewCompte()
+Account& AccountsManager::createNewCompte()
 {
-	return Account("aff", 0);
+	maxid++;
+	std::stringstream stream;
+	stream << "0x"
+		<< std::setfill('0') << std::setw(3)
+		<< std::hex << maxid;
+	auto idHex= stream.str();
+	auto id = idHex.substr(2, idHex.length());
+
+	auto account = Account(id, 0);
+
+	auto pair = comptes.emplace(id, account);
+
+	return pair.first->second;
 }
 
 bool AccountsManager::hasAccount(std::string id) const
@@ -24,7 +38,7 @@ bool AccountsManager::hasAccount(std::string id) const
 	return comptes.find(id) != comptes.end();
 }
 
-Account AccountsManager::getCompte(std::string value) const
+Account& AccountsManager::getCompte(std::string value)
 {
 	return comptes.at(value);
 }

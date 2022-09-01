@@ -1,11 +1,13 @@
 #include "Money.h"
 
+#include <iostream>
+
 void Money::modify(const int value)
 {
 	this->value += value;
 }
 
-std::string Money::toString()
+std::string Money::toString() const
 {
 	using namespace std;
 	auto str = to_string(value);
@@ -21,6 +23,12 @@ std::string Money::toString()
 void Money::set(const int value)
 {
 	this->value = value;
+}
+
+std::ostream& operator<<(std::ostream& os, const Money& money)
+{
+	os << money.toString();
+	return os;
 }
 
 
