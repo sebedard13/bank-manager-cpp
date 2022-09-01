@@ -4,7 +4,7 @@
 
 std::string CListAccounts::commandName()
 {
-	return "Show all acounts";
+	return "list all acount ids";
 }
 
 void CListAccounts::execute(AccountsManager& manager)

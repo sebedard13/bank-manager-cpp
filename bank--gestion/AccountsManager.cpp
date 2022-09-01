@@ -33,6 +33,11 @@ Account& AccountsManager::createNewCompte()
 	return pair.first->second;
 }
 
+void AccountsManager::deleteAccount(std::string const id)
+{
+	comptes.erase(id);
+}
+
 bool AccountsManager::hasAccount(std::string id) const
 {
 	return comptes.find(id) != comptes.end();

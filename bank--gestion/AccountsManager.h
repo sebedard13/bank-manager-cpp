@@ -9,6 +9,7 @@ class AccountsManager
 public:
 	void loadAccounts();
 	Account& createNewCompte();
+	void deleteAccount(std::string const id);
 	bool hasAccount(std::string id) const;
 	Account& getCompte(std::string id);
 	void forAll(void (*func)(Account&));

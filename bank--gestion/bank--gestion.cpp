@@ -7,6 +7,7 @@
 #include "CAddAccount.h"
 #include "AccountsManager.h"
 #include "CShowAccount.h"
+#include "CDeleateAccount.h"
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
 	commands.push_back(make_unique<CListAccounts>());
 	commands.push_back(make_unique<CShowAccount>());
 	commands.push_back(make_unique<CAddAccount>());
+	commands.push_back(make_unique<CDeleteAccount>());
 
 	bool run = true;
 	while (run)

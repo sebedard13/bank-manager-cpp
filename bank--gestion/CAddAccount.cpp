@@ -4,7 +4,7 @@
 
 std::string CAddAccount::commandName()
 {
-    return "create new account";
+    return "create a new account";
 }
 
 void CAddAccount::execute(AccountsManager& manager)

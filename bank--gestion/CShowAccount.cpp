@@ -12,7 +12,7 @@ void CShowAccount::execute(AccountsManager& manager)
 	using namespace std;
 
 	string id;
-	cout << "Get id" << endl;
+	cout << "Account id you want to get info" << endl;
 	cin >> id;
 	if (manager.hasAccount(id))
 	{

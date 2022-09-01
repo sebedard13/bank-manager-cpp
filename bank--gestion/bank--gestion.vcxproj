@@ -131,6 +131,7 @@
     <ClCompile Include="bank--gestion.cpp" />
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="CAddAccount.cpp" />
+    <ClCompile Include="CDeleteAccount.cpp" />
     <ClCompile Include="CShowAccount.cpp" />
     <ClCompile Include="CListAccounts.cpp" />
     <ClCompile Include="AccountsManager.cpp" />
@@ -138,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAddAccount.h" />
+    <ClInclude Include="CDeleteAccount.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Account.h" />
     <ClInclude Include="CShowAccount.h" />
