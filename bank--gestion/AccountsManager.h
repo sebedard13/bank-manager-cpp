@@ -8,14 +8,15 @@ class AccountsManager
 {
 public:
 	void loadAccounts();
-	Account& createNewCompte();
-	void deleteAccount(std::string const id);
-	bool hasAccount(std::string id) const;
-	Account& getCompte(std::string id);
-	void forAll(void (*func)(Account&));
+	Account& createNewAccount();
+	void deleteAccount(const std::string& id);
+	bool hasAccount(const std::string& id) const;
+	Account& getAccount(const std::string& id);
+	const Account& getAccountC(const std::string& id) const;
+	void forAll(void (func)(Account&));
 
 private:
-	short maxid {0};
-	std::map<std::string, Account> comptes = std::map<std::string, Account>();
+	short maxid{ 0 };
+	std::map<std::string, Account> accounts{  };
 };
 

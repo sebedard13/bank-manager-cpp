@@ -7,20 +7,15 @@
 class Account
 {
 public:
-	Account(const std::string& id, const int money) : id(id)
-	{
-		this->money.set(money);
-	}
+	Account(const std::string& id, const int money);
 
-	std::string getId() const
-	{
-		return id;
-	}
+	const std::string& getId() const;
 
-	Money& getMoney()
-	{
-		return money;
-	}
+
+	void addToBalance(const int& value);
+
+	const Money& getMoney() const;
+
 
 private:
 	std::string id;

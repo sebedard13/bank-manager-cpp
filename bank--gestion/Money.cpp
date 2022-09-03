@@ -2,12 +2,7 @@
 
 #include <iostream>
 
-void Money::modify(const int value)
-{
-	this->value += value;
-}
-
-std::string Money::toString() const
+const std::string Money::toString() const
 {
 	using namespace std;
 	auto str = to_string(value);
@@ -23,6 +18,11 @@ std::string Money::toString() const
 void Money::set(const int value)
 {
 	this->value = value;
+}
+
+const long long& Money::get() const
+{
+	return value;
 }
 
 std::ostream& operator<<(std::ostream& os, const Money& money)

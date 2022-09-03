@@ -2,19 +2,15 @@
 
 #include <iostream>
 
-std::string CListAccounts::commandName()
+std::string CListAccounts::commandName()const
 {
-	return "list all acount ids";
+	return "list all account ids";
 }
 
 void CListAccounts::execute(AccountsManager& manager)
 {
-	std::cout << "Account id " << std::endl;
+	std::cout << "Account id" << std::endl;
 	manager.forAll(listAccount);
-}
-
-CListAccounts::~CListAccounts()
-{
 }
 
 void CListAccounts::listAccount(Account& account)

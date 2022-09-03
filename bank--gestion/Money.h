@@ -5,9 +5,10 @@ class Money
 {
 public:
 	void set(const int value);
-	void modify(const int value);
 
-	std::string toString() const;
+	const long long int& get() const;
+
+	const std::string toString() const;
 
 private:
 	long long int value = 0;

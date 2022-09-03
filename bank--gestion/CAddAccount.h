@@ -4,10 +4,8 @@
 class CAddAccount : public Command
 {
 public:
-	std::string commandName() override;
+	std::string commandName() const override;
 
 	void execute(AccountsManager& manager) override;
-
-	~CAddAccount();
 };
 

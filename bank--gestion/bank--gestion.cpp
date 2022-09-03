@@ -7,21 +7,23 @@
 #include "CAddAccount.h"
 #include "AccountsManager.h"
 #include "CShowAccount.h"
-#include "CDeleateAccount.h"
+#include "CDeleteAccount.h"
 
 int main()
 {
 	using namespace std;
 
-	AccountsManager manager {};
+	AccountsManager manager{};
 	manager.loadAccounts();
 
-	vector<unique_ptr<Command>> commands {};
+	vector<unique_ptr<Command>> commands{};
 
 	commands.push_back(make_unique<CListAccounts>());
 	commands.push_back(make_unique<CShowAccount>());
 	commands.push_back(make_unique<CAddAccount>());
 	commands.push_back(make_unique<CDeleteAccount>());
+
+	std::string a{ "aa" };
 
 	bool run = true;
 	while (run)
