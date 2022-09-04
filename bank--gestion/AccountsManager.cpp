@@ -11,9 +11,9 @@ void AccountsManager::loadAccounts()
 	Account& b{ createNewAccount() };
 	Account& c{ createNewAccount() };
 
-	a.addToBalance(2);
-	b.addToBalance(20);
-	c.addToBalance(10);
+	a.addToBalance(Money(2));
+	b.addToBalance(Money(20));
+	c.addToBalance(Money(10));
 }
 
 Account& AccountsManager::createNewAccount()

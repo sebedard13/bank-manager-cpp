@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-std::string CAddAccount::commandName()const
+std::string CAddAccount::commandName() const
 {
 	return "create a new account";
 }

@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-std::string CListAccounts::commandName()const
+std::string CListAccounts::commandName() const
 {
-	return "list all account ids";
+	return "list all account ids and balance";
 }
 
 void CListAccounts::execute(AccountsManager& manager)
@@ -15,5 +15,5 @@ void CListAccounts::execute(AccountsManager& manager)
 
 void CListAccounts::listAccount(Account& account)
 {
-	std::cout << account.getId() << std::endl;
+	std::cout << account.getId() << " | " << account.getMoney() << std::endl;
 }

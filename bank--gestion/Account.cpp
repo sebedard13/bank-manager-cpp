@@ -11,9 +11,14 @@ const std::string& Account::getId() const
 	return this->id;
 }
 
-void Account::addToBalance(const int& value)
+void Account::addToBalance(const Money& value)
 {
-	money.set(money.get() + value);
+	money += value;
+}
+
+void Account::subtractFromBalance(const Money& value)
+{
+	money -= value;
 }
 
 const Money& Account::getMoney() const

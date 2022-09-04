@@ -12,7 +12,8 @@ public:
 	const std::string& getId() const;
 
 
-	void addToBalance(const int& value);
+	void addToBalance(const Money& value);
+	void subtractFromBalance(const Money& value);
 
 	const Money& getMoney() const;
 

@@ -8,6 +8,9 @@
 #include "AccountsManager.h"
 #include "CShowAccount.h"
 #include "CDeleteAccount.h"
+#include "CDeposit.h"
+#include "CTransfer.h"
+#include "CWithdrawal.h"
 
 int main()
 {
@@ -21,6 +24,9 @@ int main()
 	commands.push_back(make_unique<CListAccounts>());
 	commands.push_back(make_unique<CShowAccount>());
 	commands.push_back(make_unique<CAddAccount>());
+	commands.push_back(make_unique<CDeposit>());
+	commands.push_back(make_unique<CWithdrawal>());
+	commands.push_back(make_unique<CTransfer>());
 	commands.push_back(make_unique<CDeleteAccount>());
 
 	std::string a{ "aa" };
@@ -50,6 +56,7 @@ int main()
 			commands.at(value)->execute(manager);
 		}
 		cout << endl;
+		cin.clear();
 	}
 }
 

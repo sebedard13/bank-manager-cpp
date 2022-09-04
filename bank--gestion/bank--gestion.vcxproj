@@ -132,19 +132,25 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="CAddAccount.cpp" />
     <ClCompile Include="CDeleteAccount.cpp" />
+    <ClCompile Include="CDeposit.cpp" />
     <ClCompile Include="CShowAccount.cpp" />
     <ClCompile Include="CListAccounts.cpp" />
     <ClCompile Include="AccountsManager.cpp" />
+    <ClCompile Include="CTransfer.cpp" />
+    <ClCompile Include="CWithdrawal.cpp" />
     <ClCompile Include="Money.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAddAccount.h" />
     <ClInclude Include="CDeleteAccount.h" />
+    <ClInclude Include="CDeposit.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Account.h" />
     <ClInclude Include="CShowAccount.h" />
     <ClInclude Include="CListAccounts.h" />
     <ClInclude Include="AccountsManager.h" />
+    <ClInclude Include="CTransfer.h" />
+    <ClInclude Include="CWithdrawal.h" />
     <ClInclude Include="Money.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
