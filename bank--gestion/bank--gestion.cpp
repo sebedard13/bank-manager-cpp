@@ -58,5 +58,7 @@ int main()
 		cout << endl;
 		cin.clear();
 	}
+
+	manager.saveAccounts();
 }
 

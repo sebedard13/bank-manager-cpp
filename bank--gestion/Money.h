@@ -11,6 +11,7 @@ public:
 	}
 
 	void set(const int value);
+	void set(const long long value);
 
 	const long long int& get() const;
 

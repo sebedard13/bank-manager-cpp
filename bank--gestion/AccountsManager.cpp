@@ -3,17 +3,45 @@
 #include <algorithm>
 #include <sstream>
 #include <iomanip>
+#include <fstream>
 
 void AccountsManager::loadAccounts()
 {
+	using namespace  std;
+	ifstream file(path);
+	if (file.good())
+	{
+		string line;
+		getline(file, line);
+		maxid = stoi(line);
 
-	Account& a{ createNewAccount() };
-	Account& b{ createNewAccount() };
-	Account& c{ createNewAccount() };
+		while (getline(file, line))
+		{
+			string id{ line };
+			getline(file, line);
+			long long money = stoll(line);
+			accounts.emplace(id, Account{ id,money });
+		}
+	}
+	file.close();
+}
 
-	a.addToBalance(Money(2));
-	b.addToBalance(Money(20));
-	c.addToBalance(Money(10));
+void AccountsManager::saveAccounts()
+{
+	using namespace  std;
+	ofstream file(path);
+	if (file.good())
+	{
+
+		file << maxid << endl;
+
+		for (auto& account : accounts)
+		{
+			file << account.second.getId() << endl;
+			file << account.second.getMoney().get() << endl;
+		}
+	}
+	file.close();
 }
 
 Account& AccountsManager::createNewAccount()

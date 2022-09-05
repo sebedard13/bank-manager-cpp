@@ -8,6 +8,7 @@ class AccountsManager
 {
 public:
 	void loadAccounts();
+	void saveAccounts();
 	Account& createNewAccount();
 	void deleteAccount(const std::string& id);
 	bool hasAccount(const std::string& id) const;
@@ -18,5 +19,6 @@ public:
 private:
 	short maxid{ 0 };
 	std::map<std::string, Account> accounts{  };
+	const std::string path{ "bankSave.txt" };
 };
 

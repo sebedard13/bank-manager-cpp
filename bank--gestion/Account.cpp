@@ -6,6 +6,12 @@ Account::Account(const std::string& id, const int money)
 	this->money.set(money);
 }
 
+Account::Account(const std::string& id, const long long money)
+{
+	this->id = id;
+	this->money.set(money);
+}
+
 const std::string& Account::getId() const
 {
 	return this->id;

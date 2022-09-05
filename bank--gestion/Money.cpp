@@ -32,6 +32,11 @@ void Money::set(const int value)
 	this->value = value;
 }
 
+void Money::set(const long long value)
+{
+	this->value = value;
+}
+
 const long long& Money::get() const
 {
 	return value;
@@ -48,7 +53,7 @@ std::istream& operator>>(std::istream& os, Money& money)
 	double amount;
 	os >> amount;
 
-	money.set(round(amount * 100));
+	money.set((int)round(amount * 100));
 	return os;
 }
 

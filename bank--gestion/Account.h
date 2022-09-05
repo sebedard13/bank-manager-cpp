@@ -8,6 +8,7 @@ class Account
 {
 public:
 	Account(const std::string& id, const int money);
+	Account(const std::string& id, const long long money);
 
 	const std::string& getId() const;
 
